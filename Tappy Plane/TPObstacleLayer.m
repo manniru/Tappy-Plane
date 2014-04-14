@@ -16,6 +16,8 @@
 @end
 
 static const CGFloat kTPMarkerBuffer = 200.0;
+static const CGFloat kTPVerticalGap = 90.0;
+static const CGFloat kTPSpaceBetweenObstacleSets = 180.0;
 
 static NSString *const kTPKeyMountainUp = @"MountainUp";
 static NSString *const kTPKeyMountainDown = @"MountainDown";
@@ -41,8 +43,42 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
 
 -(void)addObstacleSet
 {
+    // Get mountain nodes.
+    SKSpriteNode *mountainUp = [self getUnusedObjectForKey:kTPKeyMountainUp];
+    SKSpriteNode *mountainDown = [self getUnusedObjectForKey:kTPKeyMountainDown];
+
+    // Calculate maximum variation.
+    CGFloat maxVariation = (mountainUp.size.height + mountainDown.size.height + kTPVerticalGap) - (self.ceiling - self.floor);
+    CGFloat yAdjustment = (CGFloat)arc4random_uniform(maxVariation);
+    
+    // Postion mountain nodes.
+    mountainUp.position = CGPointMake(self.marker, self.floor + (mountainUp.size.height * 0.5) - yAdjustment);
+    mountainDown.position = CGPointMake(self.marker, mountainUp.position.y + mountainDown.size.height + kTPVerticalGap);
+    
+    // Reposition marker.
+    self.marker += kTPSpaceBetweenObstacleSets;
     
 }
+
+-(SKSpriteNode*)getUnusedObjectForKey:(NSString*)key
+{
+    if (self.scene) {
+        // Get left edge of screen in local coordinates.
+        CGFloat leftEdgeInLocalCoords = [self.scene convertPoint:CGPointMake(-self.scene.size.width * self.scene.anchorPoint.x, 0) toNode:self].x;
+        
+        // Try find object for key to the left of the screen.
+        for (SKSpriteNode* node in self.children) {
+            if (node.name == key && node.frame.origin.x + node.frame.size.width < leftEdgeInLocalCoords) {
+                // Return unsed object.
+                return node;
+            }
+        }
+    }
+    
+    // Couldn't find an unused node with key so create a new one.
+    return [self createObjectForKey:key];
+}
+
 
 -(SKSpriteNode*)createObjectForKey:(NSString*)key
 {
