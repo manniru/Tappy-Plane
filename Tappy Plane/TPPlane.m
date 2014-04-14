@@ -24,6 +24,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     self = [super initWithImageNamed:@"planeBlue1@2x"];
     if (self) {
         
+        // Setup physics body.
+        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width * 0.5];
+        self.physicsBody.mass = 0.08;
+        
         // Init array to hold animation actions.
         _planeAnimations = [[NSMutableArray alloc] init];
         
@@ -89,4 +93,22 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
                                                                 resize:NO restore:NO]];
 }
 
+
+- (void)update
+{
+    if (self.accelerating) {
+        [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
+    }
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
