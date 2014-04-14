@@ -36,6 +36,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup physics.
         self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
+        self.physicsWorld.contactDelegate = self;
         
         // Setup world.
         _world = [SKNode node];
@@ -118,6 +119,17 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     for (UITouch *touch in touches) {
         self.player.accelerating = NO;
     }
+}
+
+-(void)didBeginContact:(SKPhysicsContact *)contact
+{
+    if (contact.bodyA.categoryBitMask == kTPCategoryPlane) {
+        [self.player collide:contact.bodyB];
+    }
+    else if (contact.bodyB.categoryBitMask == kTPCategoryPlane) {
+        [self.player collide:contact.bodyA];
+    }
+    
 }
 
 -(void)update:(NSTimeInterval)currentTime
