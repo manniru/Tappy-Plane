@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5734432018DB27E80007361B /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734431F18DB27E80007361B /* TPPlane.m */; };
 		576D4CBD18DAFD1400A53A6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CBC18DAFD1400A53A6E /* Foundation.framework */; };
 		576D4CBF18DAFD1400A53A6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CBE18DAFD1400A53A6E /* CoreGraphics.framework */; };
 		576D4CC118DAFD1400A53A6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CC018DAFD1400A53A6E /* UIKit.framework */; };
@@ -23,6 +24,7 @@
 		576D4CED18DAFD1400A53A6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 576D4CEB18DAFD1400A53A6E /* InfoPlist.strings */; };
 		576D4CEF18DAFD1400A53A6E /* Tappy_PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D4CEE18DAFD1400A53A6E /* Tappy_PlaneTests.m */; };
 		576D4CFA18DAFD5200A53A6E /* TPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D4CF918DAFD5200A53A6E /* TPGameScene.m */; };
+		576D4DC018DB199100A53A6E /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 576D4DBF18DB199100A53A6E /* Planes.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5734431E18DB27E80007361B /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
+		5734431F18DB27E80007361B /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
 		576D4CB918DAFD1400A53A6E /* Tappy Plane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tappy Plane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		576D4CBC18DAFD1400A53A6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		576D4CBE18DAFD1400A53A6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +62,7 @@
 		576D4CEE18DAFD1400A53A6E /* Tappy_PlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tappy_PlaneTests.m; sourceTree = "<group>"; };
 		576D4CF818DAFD5200A53A6E /* TPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameScene.h; sourceTree = "<group>"; };
 		576D4CF918DAFD5200A53A6E /* TPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameScene.m; sourceTree = "<group>"; };
+		576D4DBF18DB199100A53A6E /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,7 @@
 		576D4CC418DAFD1400A53A6E /* Tappy Plane */ = {
 			isa = PBXGroup;
 			children = (
+				576D4DBF18DB199100A53A6E /* Planes.atlas */,
 				576D4CCD18DAFD1400A53A6E /* TPAppDelegate.h */,
 				576D4CCE18DAFD1400A53A6E /* TPAppDelegate.m */,
 				576D4CD018DAFD1400A53A6E /* Main.storyboard */,
@@ -126,6 +132,8 @@
 				576D4CD418DAFD1400A53A6E /* TPViewController.m */,
 				576D4CF818DAFD5200A53A6E /* TPGameScene.h */,
 				576D4CF918DAFD5200A53A6E /* TPGameScene.m */,
+				5734431E18DB27E80007361B /* TPPlane.h */,
+				5734431F18DB27E80007361B /* TPPlane.m */,
 				576D4CDB18DAFD1400A53A6E /* Images.xcassets */,
 				576D4CC518DAFD1400A53A6E /* Supporting Files */,
 			);
@@ -240,6 +248,7 @@
 			files = (
 				576D4CC918DAFD1400A53A6E /* InfoPlist.strings in Resources */,
 				576D4CDC18DAFD1400A53A6E /* Images.xcassets in Resources */,
+				576D4DC018DB199100A53A6E /* Planes.atlas in Resources */,
 				576D4CD218DAFD1400A53A6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +271,7 @@
 				576D4CD518DAFD1400A53A6E /* TPViewController.m in Sources */,
 				576D4CCF18DAFD1400A53A6E /* TPAppDelegate.m in Sources */,
 				576D4CCB18DAFD1400A53A6E /* main.m in Sources */,
+				5734432018DB27E80007361B /* TPPlane.m in Sources */,
 				576D4CFA18DAFD5200A53A6E /* TPGameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +483,7 @@
 				576D4CF418DAFD1400A53A6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		576D4CF518DAFD1400A53A6E /* Build configuration list for PBXNativeTarget "Tappy PlaneTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +492,7 @@
 				576D4CF718DAFD1400A53A6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
