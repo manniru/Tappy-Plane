@@ -7,6 +7,7 @@
 //
 
 #import "TPObstacleLayer.h"
+#import "TPConstants.h"
 
 @interface TPObstacleLayer()
 
@@ -51,10 +52,36 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
     
     if (key == kTPKeyMountainUp) {
         object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
+        
+        CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
+        CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
+        
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, NULL, 55 - offsetX, 199 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 0 - offsetX, 0 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 90 - offsetX, 0 - offsetY);
+        CGPathCloseSubpath(path);
+        
+        object.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        object.physicsBody.categoryBitMask = kTPCategoryGround;
+        
         [self addChild:object];
     }
     else if (key == kTPKeyMountainDown) {
         object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
+        
+        CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
+        CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
+        
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, NULL, 0 - offsetX, 199 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 55 - offsetX, 0 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 90 - offsetX, 199 - offsetY);
+        CGPathCloseSubpath(path);
+        
+        object.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
+        object.physicsBody.categoryBitMask = kTPCategoryGround;
+
         [self addChild:object];
     }
     
@@ -64,6 +91,7 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
     
     return object;
 }
+
 
 
 
