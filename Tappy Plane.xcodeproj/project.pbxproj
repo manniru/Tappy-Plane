@@ -30,6 +30,7 @@
 		576D4CFA18DAFD5200A53A6E /* TPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D4CF918DAFD5200A53A6E /* TPGameScene.m */; };
 		576D4DC018DB199100A53A6E /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 576D4DBF18DB199100A53A6E /* Graphics.atlas */; };
 		579AC24A18DC3A5800CBEB57 /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 579AC24918DC3A5800CBEB57 /* PlanePuffTrail.sks */; };
+		57CBC89018E5D3C200C1F05D /* TPObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CBC88F18E5D3C200C1F05D /* TPObstacleLayer.m */; };
 		57E0930018DC38EA00AF0FDB /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E092FE18DC38EA00AF0FDB /* spark.png */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,8 @@
 		576D4CF918DAFD5200A53A6E /* TPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameScene.m; sourceTree = "<group>"; };
 		576D4DBF18DB199100A53A6E /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		579AC24918DC3A5800CBEB57 /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
+		57CBC88E18E5D3C200C1F05D /* TPObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPObstacleLayer.h; sourceTree = "<group>"; };
+		57CBC88F18E5D3C200C1F05D /* TPObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPObstacleLayer.m; sourceTree = "<group>"; };
 		57E092FE18DC38EA00AF0FDB /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +164,8 @@
 				576D4CF918DAFD5200A53A6E /* TPGameScene.m */,
 				5734431E18DB27E80007361B /* TPPlane.h */,
 				5734431F18DB27E80007361B /* TPPlane.m */,
+				57CBC88E18E5D3C200C1F05D /* TPObstacleLayer.h */,
+				57CBC88F18E5D3C200C1F05D /* TPObstacleLayer.m */,
 				570BE57418DCBF3500A94DBF /* TPScrollingLayer.h */,
 				570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */,
 				570BE56818DC945200A94DBF /* TPScrollingNode.h */,
@@ -312,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				576D4CD518DAFD1400A53A6E /* TPViewController.m in Sources */,
+				57CBC89018E5D3C200C1F05D /* TPObstacleLayer.m in Sources */,
 				570BE58218E30A9500A94DBF /* TPConstants.m in Sources */,
 				576D4CCF18DAFD1400A53A6E /* TPAppDelegate.m in Sources */,
 				576D4CCB18DAFD1400A53A6E /* main.m in Sources */,
