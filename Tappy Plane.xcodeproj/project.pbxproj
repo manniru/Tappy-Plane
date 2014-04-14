@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5734432018DB27E80007361B /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734431F18DB27E80007361B /* TPPlane.m */; };
+		5734432518DB36300007361B /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5734432418DB36300007361B /* PlaneAnimations.plist */; };
 		576D4CBD18DAFD1400A53A6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CBC18DAFD1400A53A6E /* Foundation.framework */; };
 		576D4CBF18DAFD1400A53A6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CBE18DAFD1400A53A6E /* CoreGraphics.framework */; };
 		576D4CC118DAFD1400A53A6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CC018DAFD1400A53A6E /* UIKit.framework */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		5734431E18DB27E80007361B /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		5734431F18DB27E80007361B /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
+		5734432418DB36300007361B /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
 		576D4CB918DAFD1400A53A6E /* Tappy Plane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tappy Plane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		576D4CBC18DAFD1400A53A6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		576D4CBE18DAFD1400A53A6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5734432618DB36AE0007361B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5734432418DB36300007361B /* PlaneAnimations.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		576D4CB018DAFD1400A53A6E = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		576D4CC418DAFD1400A53A6E /* Tappy Plane */ = {
 			isa = PBXGroup;
 			children = (
+				5734432618DB36AE0007361B /* Resources */,
 				576D4DBF18DB199100A53A6E /* Planes.atlas */,
 				576D4CCD18DAFD1400A53A6E /* TPAppDelegate.h */,
 				576D4CCE18DAFD1400A53A6E /* TPAppDelegate.m */,
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				576D4CC918DAFD1400A53A6E /* InfoPlist.strings in Resources */,
+				5734432518DB36300007361B /* PlaneAnimations.plist in Resources */,
 				576D4CDC18DAFD1400A53A6E /* Images.xcassets in Resources */,
 				576D4DC018DB199100A53A6E /* Planes.atlas in Resources */,
 				576D4CD218DAFD1400A53A6E /* Main.storyboard in Resources */,
