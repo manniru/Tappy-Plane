@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		570BE56A18DC945200A94DBF /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE56918DC945200A94DBF /* TPScrollingNode.m */; };
 		570BE57618DCBF3500A94DBF /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */; };
+		570BE58218E30A9500A94DBF /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE58118E30A9500A94DBF /* TPConstants.m */; };
 		5734432018DB27E80007361B /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734431F18DB27E80007361B /* TPPlane.m */; };
 		5734432518DB36300007361B /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5734432418DB36300007361B /* PlaneAnimations.plist */; };
 		576D4CBD18DAFD1400A53A6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CBC18DAFD1400A53A6E /* Foundation.framework */; };
@@ -47,6 +48,8 @@
 		570BE56918DC945200A94DBF /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
 		570BE57418DCBF3500A94DBF /* TPScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingLayer.h; sourceTree = "<group>"; };
 		570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
+		570BE58018E30A9500A94DBF /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
+		570BE58118E30A9500A94DBF /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
 		5734431E18DB27E80007361B /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		5734431F18DB27E80007361B /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
 		5734432418DB36300007361B /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				57E092FC18DC38D000AF0FDB /* Particle Effects */,
 				5734432618DB36AE0007361B /* Resources */,
 				576D4DBF18DB199100A53A6E /* Graphics.atlas */,
+				570BE58018E30A9500A94DBF /* TPConstants.h */,
+				570BE58118E30A9500A94DBF /* TPConstants.m */,
 				576D4CCD18DAFD1400A53A6E /* TPAppDelegate.h */,
 				576D4CCE18DAFD1400A53A6E /* TPAppDelegate.m */,
 				576D4CD018DAFD1400A53A6E /* Main.storyboard */,
@@ -307,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				576D4CD518DAFD1400A53A6E /* TPViewController.m in Sources */,
+				570BE58218E30A9500A94DBF /* TPConstants.m in Sources */,
 				576D4CCF18DAFD1400A53A6E /* TPAppDelegate.m in Sources */,
 				576D4CCB18DAFD1400A53A6E /* main.m in Sources */,
 				5734432018DB27E80007361B /* TPPlane.m in Sources */,

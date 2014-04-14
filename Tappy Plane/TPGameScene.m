@@ -9,6 +9,7 @@
 #import "TPGameScene.h"
 #import "TPPlane.h"
 #import "TPScrollingLayer.h"
+#import "TPConstants.h"
 
 @interface TPGameScene ()
 
@@ -98,6 +99,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     CGPathAddLineToPoint(path, NULL, 0 - offsetX, 16 - offsetY);
     
     sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+    sprite.physicsBody.categoryBitMask = kTPCategoryGround;
     
     return sprite;
 }
