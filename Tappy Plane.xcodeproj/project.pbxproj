@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570BE56A18DC945200A94DBF /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE56918DC945200A94DBF /* TPScrollingNode.m */; };
+		570BE57618DCBF3500A94DBF /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */; };
 		5734432018DB27E80007361B /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734431F18DB27E80007361B /* TPPlane.m */; };
 		5734432518DB36300007361B /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5734432418DB36300007361B /* PlaneAnimations.plist */; };
 		576D4CBD18DAFD1400A53A6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CBC18DAFD1400A53A6E /* Foundation.framework */; };
@@ -25,7 +27,7 @@
 		576D4CED18DAFD1400A53A6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 576D4CEB18DAFD1400A53A6E /* InfoPlist.strings */; };
 		576D4CEF18DAFD1400A53A6E /* Tappy_PlaneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D4CEE18DAFD1400A53A6E /* Tappy_PlaneTests.m */; };
 		576D4CFA18DAFD5200A53A6E /* TPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D4CF918DAFD5200A53A6E /* TPGameScene.m */; };
-		576D4DC018DB199100A53A6E /* Planes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 576D4DBF18DB199100A53A6E /* Planes.atlas */; };
+		576D4DC018DB199100A53A6E /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 576D4DBF18DB199100A53A6E /* Graphics.atlas */; };
 		579AC24A18DC3A5800CBEB57 /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 579AC24918DC3A5800CBEB57 /* PlanePuffTrail.sks */; };
 		57E0930018DC38EA00AF0FDB /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E092FE18DC38EA00AF0FDB /* spark.png */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		570BE56818DC945200A94DBF /* TPScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingNode.h; sourceTree = "<group>"; };
+		570BE56918DC945200A94DBF /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
+		570BE57418DCBF3500A94DBF /* TPScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingLayer.h; sourceTree = "<group>"; };
+		570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
 		5734431E18DB27E80007361B /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		5734431F18DB27E80007361B /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
 		5734432418DB36300007361B /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
@@ -66,7 +72,7 @@
 		576D4CEE18DAFD1400A53A6E /* Tappy_PlaneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tappy_PlaneTests.m; sourceTree = "<group>"; };
 		576D4CF818DAFD5200A53A6E /* TPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameScene.h; sourceTree = "<group>"; };
 		576D4CF918DAFD5200A53A6E /* TPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameScene.m; sourceTree = "<group>"; };
-		576D4DBF18DB199100A53A6E /* Planes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Planes.atlas; sourceTree = "<group>"; };
+		576D4DBF18DB199100A53A6E /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		579AC24918DC3A5800CBEB57 /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
 		57E092FE18DC38EA00AF0FDB /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +146,7 @@
 			children = (
 				57E092FC18DC38D000AF0FDB /* Particle Effects */,
 				5734432618DB36AE0007361B /* Resources */,
-				576D4DBF18DB199100A53A6E /* Planes.atlas */,
+				576D4DBF18DB199100A53A6E /* Graphics.atlas */,
 				576D4CCD18DAFD1400A53A6E /* TPAppDelegate.h */,
 				576D4CCE18DAFD1400A53A6E /* TPAppDelegate.m */,
 				576D4CD018DAFD1400A53A6E /* Main.storyboard */,
@@ -150,6 +156,10 @@
 				576D4CF918DAFD5200A53A6E /* TPGameScene.m */,
 				5734431E18DB27E80007361B /* TPPlane.h */,
 				5734431F18DB27E80007361B /* TPPlane.m */,
+				570BE57418DCBF3500A94DBF /* TPScrollingLayer.h */,
+				570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */,
+				570BE56818DC945200A94DBF /* TPScrollingNode.h */,
+				570BE56918DC945200A94DBF /* TPScrollingNode.m */,
 				576D4CDB18DAFD1400A53A6E /* Images.xcassets */,
 				576D4CC518DAFD1400A53A6E /* Supporting Files */,
 			);
@@ -275,7 +285,7 @@
 				5734432518DB36300007361B /* PlaneAnimations.plist in Resources */,
 				57E0930018DC38EA00AF0FDB /* spark.png in Resources */,
 				576D4CDC18DAFD1400A53A6E /* Images.xcassets in Resources */,
-				576D4DC018DB199100A53A6E /* Planes.atlas in Resources */,
+				576D4DC018DB199100A53A6E /* Graphics.atlas in Resources */,
 				579AC24A18DC3A5800CBEB57 /* PlanePuffTrail.sks in Resources */,
 				576D4CD218DAFD1400A53A6E /* Main.storyboard in Resources */,
 			);
@@ -301,6 +311,8 @@
 				576D4CCB18DAFD1400A53A6E /* main.m in Sources */,
 				5734432018DB27E80007361B /* TPPlane.m in Sources */,
 				576D4CFA18DAFD5200A53A6E /* TPGameScene.m in Sources */,
+				570BE57618DCBF3500A94DBF /* TPScrollingLayer.m in Sources */,
+				570BE56A18DC945200A94DBF /* TPScrollingNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

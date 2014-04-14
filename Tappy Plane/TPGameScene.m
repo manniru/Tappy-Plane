@@ -8,14 +8,17 @@
 
 #import "TPGameScene.h"
 #import "TPPlane.h"
+#import "TPScrollingLayer.h"
 
 @interface TPGameScene ()
 
 @property (nonatomic) TPPlane *player;
 @property (nonatomic) SKNode *world;
+@property (nonatomic) TPScrollingLayer *background;
 
 @end
 
+static const CGFloat kMinFPS = 10.0 / 60.0;
 
 @implementation TPGameScene
 
@@ -23,12 +26,31 @@
 {
     if (self = [super initWithSize:size]) {
         
+        // Set background colour to sky blue.
+        self.backgroundColor = [SKColor colorWithRed:0.835294118 green:0.929411765 blue:0.968627451 alpha:1.0];
+        
+        // Get atlas file.
+        SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
+        
         // Setup physics.
         self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
         
         // Setup world.
         _world = [SKNode node];
         [self addChild:_world];
+        
+        // Setup background.
+        NSMutableArray *backgroudTiles = [[NSMutableArray alloc] init];
+        for (int i = 0; i < 3; i++) {
+            [backgroudTiles addObject:[SKSpriteNode spriteNodeWithTexture:[graphics textureNamed:@"background"]]];
+        }
+        
+        _background = [[TPScrollingLayer alloc] initWithTiles:backgroudTiles];
+        _background.position = CGPointMake(0, 30);
+        _background.horizontalScrollSpeed = -60;
+        _background.scrolling = YES;
+        [_world addChild:_background];
+        
         
         // Setup player.
         _player = [[TPPlane alloc] init];
@@ -59,11 +81,23 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
+    static NSTimeInterval lastCallTime;
+    NSTimeInterval timeElapsed = currentTime - lastCallTime;
+    if (timeElapsed > kMinFPS) {
+        timeElapsed = kMinFPS;
+    }
+    lastCallTime = currentTime;
+    
     [self.player update];
+    [self.background updateWithTimeElpased:timeElapsed];
+    
 }
 
 
 @end
+
+
+
 
 
 
