@@ -25,6 +25,19 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
 @implementation TPObstacleLayer
 
 
+-(void)reset
+{
+    // Loop through child nodes and reposition for reuse.
+    for (SKNode *node in self.children) {
+        node.position = CGPointMake(-1000, 0);
+    }
+    
+    // Reposition marker.
+    if (self.scene) {
+        self.marker = self.scene.size.width + kTPMarkerBuffer;
+    }
+}
+
 -(void)updateWithTimeElpased:(NSTimeInterval)timeElapsed
 {
     [super updateWithTimeElpased:timeElapsed];
@@ -69,7 +82,7 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
         // Try find object for key to the left of the screen.
         for (SKSpriteNode* node in self.children) {
             if (node.name == key && node.frame.origin.x + node.frame.size.width < leftEdgeInLocalCoords) {
-                // Return unsed object.
+                // Return unused object.
                 return node;
             }
         }
