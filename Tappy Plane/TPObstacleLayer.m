@@ -24,6 +24,18 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
 
 @implementation TPObstacleLayer
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        // Load initial objects
+        for (int i = 0; i < 5; i++) {
+            [self createObjectForKey:kTPKeyMountainUp].position = CGPointMake(-1000, 0);
+            [self createObjectForKey:kTPKeyMountainDown].position = CGPointMake(-1000, 0);
+        }
+    }
+    return self;
+}
 
 -(void)reset
 {
