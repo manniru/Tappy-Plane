@@ -34,8 +34,8 @@
         _player = [[TPPlane alloc] init];
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
-        _player.engineRunning = YES;
         [_world addChild:_player];
+        _player.engineRunning = YES;
         
         
     }

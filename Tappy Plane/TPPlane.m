@@ -55,6 +55,7 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 {
     _engineRunning = engineRunning;
     if (engineRunning) {
+        self.puffTrailEmitter.targetNode = self.parent;
         [self actionForKey:kKeyPlaneAnimation].speed = 1;
         self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     }
