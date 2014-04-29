@@ -18,6 +18,8 @@
 static const CGFloat kTPMarkerBuffer = 200.0;
 static const CGFloat kTPVerticalGap = 90.0;
 static const CGFloat kTPSpaceBetweenObstacleSets = 180.0;
+static const int kTPCollectableVerticalRange = 200.0;
+static const CGFloat kTPCollectableClearance = 50.0;
 
 static NSString *const kTPKeyMountainUp = @"MountainUp";
 static NSString *const kTPKeyMountainDown = @"MountainDown";
@@ -80,6 +82,18 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
     // Postion mountain nodes.
     mountainUp.position = CGPointMake(self.marker, self.floor + (mountainUp.size.height * 0.5) - yAdjustment);
     mountainDown.position = CGPointMake(self.marker, mountainUp.position.y + mountainDown.size.height + kTPVerticalGap);
+    
+    // Get collectable star node.
+    SKSpriteNode *collectable = [self getUnusedObjectForKey:kTPKeyCollectableStar];
+    
+    // Position collectable.
+    CGFloat midPoint = mountainUp.position.y + (mountainUp.size.height * 0.5) + (kTPVerticalGap * 0.5);
+    CGFloat yPosition = midPoint + arc4random_uniform(kTPCollectableVerticalRange) - (kTPCollectableVerticalRange * 0.5);
+    
+    yPosition = fmaxf(yPosition, self.floor + kTPCollectableClearance);
+    yPosition = fminf(yPosition, self.ceiling - kTPCollectableClearance);
+    
+    collectable.position = CGPointMake(self.marker + (kTPSpaceBetweenObstacleSets * 0.5), yPosition);
     
     // Reposition marker.
     self.marker += kTPSpaceBetweenObstacleSets;
