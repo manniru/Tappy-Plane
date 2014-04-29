@@ -21,6 +21,7 @@ static const CGFloat kTPSpaceBetweenObstacleSets = 180.0;
 
 static NSString *const kTPKeyMountainUp = @"MountainUp";
 static NSString *const kTPKeyMountainDown = @"MountainDown";
+static NSString *const kTPKeyCollectableStar = @"CollectableStar";
 
 @implementation TPObstacleLayer
 
@@ -143,6 +144,13 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
         object.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path];
         object.physicsBody.categoryBitMask = kTPCategoryGround;
 
+        [self addChild:object];
+    } else if (key == kTPKeyCollectableStar) {
+        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+        object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
+        object.physicsBody.categoryBitMask = kTPCategoryCollectable;
+        object.physicsBody.dynamic = NO;
+        
         [self addChild:object];
     }
     
