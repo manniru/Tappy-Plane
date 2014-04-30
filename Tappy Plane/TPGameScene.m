@@ -134,30 +134,26 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(void)wasCollected:(TPCollectable *)collectable
 {
-    NSLog(@"Collected item worth %d points", collectable.pointValue);
+    NSLog(@"Collected item worth %ld points", (long)collectable.pointValue);
 }
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch *touch in touches) {
-        if (self.player.crashed) {
-            // Reset game.
-            [self newGame];
-        }
-        else{
-            _player.physicsBody.affectedByGravity = YES;
-            self.player.accelerating = YES;
-            self.obstacles.scrolling = YES;
-        }
+    if (self.player.crashed) {
+        // Reset game.
+        [self newGame];
+    }
+    else{
+        _player.physicsBody.affectedByGravity = YES;
+        self.player.accelerating = YES;
+        self.obstacles.scrolling = YES;
     }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch *touch in touches) {
-        self.player.accelerating = NO;
-    }
+    self.player.accelerating = NO;
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact

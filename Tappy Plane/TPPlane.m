@@ -112,7 +112,7 @@ static const CGFloat kTPMaxAltitude = 300.0;
 - (void)setRandomColour
 {
     [self removeActionForKey:kTPKeyPlaneAnimation];
-    SKAction *animation = [self.planeAnimations objectAtIndex:arc4random_uniform(self.planeAnimations.count)];
+    SKAction *animation = [self.planeAnimations objectAtIndex:arc4random_uniform((uint)self.planeAnimations.count)];
     [self runAction:animation withKey:kTPKeyPlaneAnimation];
     if (!self.engineRunning) {
         [self actionForKey:kTPKeyPlaneAnimation].speed = 0;
