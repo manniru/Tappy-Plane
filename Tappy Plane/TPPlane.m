@@ -8,6 +8,7 @@
 
 #import "TPPlane.h"
 #import "TPConstants.h"
+#import "TPCollectable.h"
 
 @interface TPPlane()
 @property (nonatomic) NSMutableArray *planeAnimations; // Holds animation actions.
@@ -128,7 +129,9 @@ static const CGFloat kTPMaxAltitude = 300.0;
             self.crashed = YES;
         }
         if (body.categoryBitMask == kTPCategoryCollectable) {
-            [body.node runAction:[SKAction removeFromParent]];
+            if ([body.node respondsToSelector:@selector(collect)]) {
+                [body.node performSelector:@selector(collect)];
+            }
         }
     }
 }

@@ -57,6 +57,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup obstacle layer.
         _obstacles = [[TPObstacleLayer alloc] init];
+        _obstacles.collectableDelegate = self;
         _obstacles.horizontalScrollSpeed = -80;
         _obstacles.scrolling = YES;
         _obstacles.floor = 0.0;
@@ -129,6 +130,11 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
     self.player.physicsBody.affectedByGravity = NO;
     [self.player reset];
+}
+
+-(void)wasCollected:(TPCollectable *)collectable
+{
+    NSLog(@"Collected item worth %d points", collectable.pointValue);
 }
 
 
