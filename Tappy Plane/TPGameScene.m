@@ -11,6 +11,7 @@
 #import "TPScrollingLayer.h"
 #import "TPConstants.h"
 #import "TPObstacleLayer.h"
+#import "TPBitmapFontLabel.h"
 
 @interface TPGameScene ()
 
@@ -19,6 +20,8 @@
 @property (nonatomic) TPScrollingLayer *background;
 @property (nonatomic) TPObstacleLayer *obstacles;
 @property (nonatomic) TPScrollingLayer *foreground;
+@property (nonatomic) TPBitmapFontLabel *scoreLabel;
+@property (nonatomic) NSInteger score;
 
 @end
 
@@ -75,9 +78,14 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup player.
         _player = [[TPPlane alloc] init];
-        _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
+        
+        // Setup score label.
+        _scoreLabel = [[TPBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
+        _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 100);
+        [self addChild:_scoreLabel];
+        
         
         // Start a new game.
         [self newGame];
@@ -126,15 +134,24 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     self.background.position = CGPointMake(0, 30);
     [self.background layoutTiles];
     
+    // Reset score.
+    self.score = 0;
+    
     // Reset plane.
-    self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+    self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
     self.player.physicsBody.affectedByGravity = NO;
     [self.player reset];
 }
 
 -(void)wasCollected:(TPCollectable *)collectable
 {
-    NSLog(@"Collected item worth %ld points", (long)collectable.pointValue);
+    self.score += collectable.pointValue;
+}
+
+-(void)setScore:(NSInteger)score
+{
+    _score = score;
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
 }
 
 
