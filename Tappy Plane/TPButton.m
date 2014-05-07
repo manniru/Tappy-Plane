@@ -7,6 +7,7 @@
 //
 
 #import "TPButton.h"
+#import <objc/message.h>
 
 @interface TPButton()
 
@@ -24,6 +25,11 @@
     return instance;
 }
 
+-(void)setPressedTarget:(id)pressedTarget withAction:(SEL)pressedAction
+{
+    _pressedTarget = pressedTarget;
+    _pressedAction = pressedAction;
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -48,6 +54,7 @@
     for (UITouch *touch in touches) {
         if (CGRectContainsPoint(self.fullSizeFrame, [touch locationInNode:self.parent])) {
             // Pressed button.
+            objc_msgSend(self.pressedTarget, self.pressedAction);
         }
     }
 }
