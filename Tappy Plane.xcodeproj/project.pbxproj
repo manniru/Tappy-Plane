@@ -15,6 +15,7 @@
 		57251AF11913C91B0008F468 /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57251AF01913C91B0008F468 /* TilesetGraphics.plist */; };
 		57251AF71913D36E0008F468 /* TPTilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 57251AF61913D36E0008F468 /* TPTilesetTextureProvider.m */; };
 		57251B4B191A29F20008F468 /* TPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57251B4A191A29F20008F468 /* TPButton.m */; };
+		5726FEDD191BCD8D00DCFF62 /* TPGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5726FEDC191BCD8D00DCFF62 /* TPGameOverMenu.m */; };
 		5734432018DB27E80007361B /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734431F18DB27E80007361B /* TPPlane.m */; };
 		5734432518DB36300007361B /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5734432418DB36300007361B /* PlaneAnimations.plist */; };
 		576D4CBD18DAFD1400A53A6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576D4CBC18DAFD1400A53A6E /* Foundation.framework */; };
@@ -65,6 +66,8 @@
 		57251AF61913D36E0008F468 /* TPTilesetTextureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTilesetTextureProvider.m; sourceTree = "<group>"; };
 		57251B49191A29F20008F468 /* TPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPButton.h; sourceTree = "<group>"; };
 		57251B4A191A29F20008F468 /* TPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPButton.m; sourceTree = "<group>"; };
+		5726FEDB191BCD8D00DCFF62 /* TPGameOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameOverMenu.h; sourceTree = "<group>"; };
+		5726FEDC191BCD8D00DCFF62 /* TPGameOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameOverMenu.m; sourceTree = "<group>"; };
 		5734431E18DB27E80007361B /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		5734431F18DB27E80007361B /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
 		5734432418DB36300007361B /* PlaneAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlaneAnimations.plist; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */,
 				570BE56818DC945200A94DBF /* TPScrollingNode.h */,
 				570BE56918DC945200A94DBF /* TPScrollingNode.m */,
+				5726FEDB191BCD8D00DCFF62 /* TPGameOverMenu.h */,
+				5726FEDC191BCD8D00DCFF62 /* TPGameOverMenu.m */,
 				576D4CDB18DAFD1400A53A6E /* Images.xcassets */,
 				576D4CC518DAFD1400A53A6E /* Supporting Files */,
 			);
@@ -346,6 +351,7 @@
 				57251B4B191A29F20008F468 /* TPButton.m in Sources */,
 				576D4CCF18DAFD1400A53A6E /* TPAppDelegate.m in Sources */,
 				576D4CCB18DAFD1400A53A6E /* main.m in Sources */,
+				5726FEDD191BCD8D00DCFF62 /* TPGameOverMenu.m in Sources */,
 				5734432018DB27E80007361B /* TPPlane.m in Sources */,
 				57251AA4190FD7BB0008F468 /* TPCollectable.m in Sources */,
 				57251AF71913D36E0008F468 /* TPTilesetTextureProvider.m in Sources */,
