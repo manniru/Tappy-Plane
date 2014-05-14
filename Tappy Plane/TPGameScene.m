@@ -143,8 +143,21 @@ static NSString *const kTPKeyBestScore = @"BestScore";
 
 -(void)pressedStartNewGameButton
 {
-    [self newGame];
-    [self.gameOverMenu removeFromParent];
+    SKSpriteNode *blackRectangle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:self.size];
+    blackRectangle.anchorPoint = CGPointZero;
+    blackRectangle.alpha = 0.0;
+    [self addChild:blackRectangle];
+    
+    SKAction *startNewGame = [SKAction runBlock:^{
+        [self newGame];
+        [self.gameOverMenu removeFromParent];
+    }];
+    
+    SKAction *fadeTransition = [SKAction sequence:@[[SKAction fadeInWithDuration:0.4],
+                                                    startNewGame,
+                                                    [SKAction fadeOutWithDuration:0.6],
+                                                    [SKAction removeFromParent]]];
+    [blackRectangle runAction:fadeTransition];
 }
 
 -(void)newGame
