@@ -255,6 +255,13 @@ static NSString *const kTPKeyBestScore = @"BestScore";
     
 }
 
+-(void)bump
+{
+    SKAction *bump = [SKAction sequence:@[[SKAction moveBy:CGVectorMake(-5, -4) duration:0.1],
+                                          [SKAction moveTo:CGPointZero duration:0.1]]];
+    [self.world runAction:bump];
+}
+
 -(void)update:(NSTimeInterval)currentTime
 {
     static NSTimeInterval lastCallTime;
@@ -267,6 +274,7 @@ static NSString *const kTPKeyBestScore = @"BestScore";
     [self.player update];
     if (self.gameState == GameRunning && self.player.crashed) {
         // Player just crashed in last frame so trigger game over.
+        [self bump];
         [self gameOver];
     }
     
