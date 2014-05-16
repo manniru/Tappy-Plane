@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5706E5ED1924C932006784C4 /* TPGetReadyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5706E5EC1924C932006784C4 /* TPGetReadyMenu.m */; };
+		5706E5F81926347A006784C4 /* SnowEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5706E5F71926347A006784C4 /* SnowEffect.sks */; };
+		5706E5FC19263A71006784C4 /* RainEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5706E5FB19263A71006784C4 /* RainEffect.sks */; };
+		5706E5FF19263DCE006784C4 /* TPWeatherLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5706E5FE19263DCE006784C4 /* TPWeatherLayer.m */; };
 		570BE56A18DC945200A94DBF /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE56918DC945200A94DBF /* TPScrollingNode.m */; };
 		570BE57618DCBF3500A94DBF /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */; };
 		570BE58218E30A9500A94DBF /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE58118E30A9500A94DBF /* TPConstants.m */; };
@@ -54,6 +57,10 @@
 /* Begin PBXFileReference section */
 		5706E5EB1924C932006784C4 /* TPGetReadyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGetReadyMenu.h; sourceTree = "<group>"; };
 		5706E5EC1924C932006784C4 /* TPGetReadyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGetReadyMenu.m; sourceTree = "<group>"; };
+		5706E5F71926347A006784C4 /* SnowEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowEffect.sks; sourceTree = "<group>"; };
+		5706E5FB19263A71006784C4 /* RainEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainEffect.sks; sourceTree = "<group>"; };
+		5706E5FD19263DCE006784C4 /* TPWeatherLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPWeatherLayer.h; sourceTree = "<group>"; };
+		5706E5FE19263DCE006784C4 /* TPWeatherLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPWeatherLayer.m; sourceTree = "<group>"; };
 		570BE56818DC945200A94DBF /* TPScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingNode.h; sourceTree = "<group>"; };
 		570BE56918DC945200A94DBF /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
 		570BE57418DCBF3500A94DBF /* TPScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingLayer.h; sourceTree = "<group>"; };
@@ -197,6 +204,8 @@
 				57CBC88F18E5D3C200C1F05D /* TPObstacleLayer.m */,
 				570BE57418DCBF3500A94DBF /* TPScrollingLayer.h */,
 				570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */,
+				5706E5FD19263DCE006784C4 /* TPWeatherLayer.h */,
+				5706E5FE19263DCE006784C4 /* TPWeatherLayer.m */,
 				570BE56818DC945200A94DBF /* TPScrollingNode.h */,
 				570BE56918DC945200A94DBF /* TPScrollingNode.m */,
 				5726FEDB191BCD8D00DCFF62 /* TPGameOverMenu.h */,
@@ -242,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				579AC24918DC3A5800CBEB57 /* PlanePuffTrail.sks */,
+				5706E5F71926347A006784C4 /* SnowEffect.sks */,
+				5706E5FB19263A71006784C4 /* RainEffect.sks */,
 				57E092FE18DC38EA00AF0FDB /* spark.png */,
 			);
 			name = "Particle Effects";
@@ -326,8 +337,10 @@
 			files = (
 				576D4CC918DAFD1400A53A6E /* InfoPlist.strings in Resources */,
 				5734432518DB36300007361B /* PlaneAnimations.plist in Resources */,
+				5706E5FC19263A71006784C4 /* RainEffect.sks in Resources */,
 				57251AF11913C91B0008F468 /* TilesetGraphics.plist in Resources */,
 				57E0930018DC38EA00AF0FDB /* spark.png in Resources */,
+				5706E5F81926347A006784C4 /* SnowEffect.sks in Resources */,
 				576D4CDC18DAFD1400A53A6E /* Images.xcassets in Resources */,
 				576D4DC018DB199100A53A6E /* Graphics.atlas in Resources */,
 				579AC24A18DC3A5800CBEB57 /* PlanePuffTrail.sks in Resources */,
@@ -362,6 +375,7 @@
 				57251AA4190FD7BB0008F468 /* TPCollectable.m in Sources */,
 				57251AF71913D36E0008F468 /* TPTilesetTextureProvider.m in Sources */,
 				576D4CFA18DAFD5200A53A6E /* TPGameScene.m in Sources */,
+				5706E5FF19263DCE006784C4 /* TPWeatherLayer.m in Sources */,
 				57251AEF1910FDF30008F468 /* TPBitmapFontLabel.m in Sources */,
 				570BE57618DCBF3500A94DBF /* TPScrollingLayer.m in Sources */,
 				570BE56A18DC945200A94DBF /* TPScrollingNode.m in Sources */,
