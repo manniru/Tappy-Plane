@@ -14,6 +14,7 @@
 #import "TPBitmapFontLabel.h"
 #import "TPTilesetTextureProvider.h"
 #import "TPGetReadyMenu.h"
+#import "TPWeatherLayer.h"
 
 typedef enum : NSUInteger {
     GameReady,
@@ -29,6 +30,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) TPScrollingLayer *background;
 @property (nonatomic) TPObstacleLayer *obstacles;
 @property (nonatomic) TPScrollingLayer *foreground;
+@property (nonatomic) TPWeatherLayer *weather;
 @property (nonatomic) TPBitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
 @property (nonatomic) NSInteger bestScore;
@@ -89,11 +91,14 @@ static NSString *const kTPKeyBestScore = @"BestScore";
         _foreground.scrolling = YES;
         [_world addChild:_foreground];
         
-        
         // Setup player.
         _player = [[TPPlane alloc] init];
         _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
+        
+        // Setup weather.
+        _weather = [[TPWeatherLayer alloc] initWithSize:self.size];
+        [_world addChild:_weather];
         
         // Setup score label.
         _scoreLabel = [[TPBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
@@ -172,6 +177,23 @@ static NSString *const kTPKeyBestScore = @"BestScore";
     // Randomize tileset.
     [[TPTilesetTextureProvider getProvider] randomizeTileset];
     
+    // Set weather conditions.
+    NSString *tilesetName = [TPTilesetTextureProvider getProvider].currentTilesetName;
+    self.weather.conditions = WeatherClear;
+    
+    if ([tilesetName isEqualToString:kTPTilesetIce] || [tilesetName isEqualToString:kTPTilesetSnow]) {
+        // 1 in 2 chance for snow on snow and ice tilesets.
+        if (arc4random_uniform(2) == 0) {
+            self.weather.conditions = WeatherSnowing;
+        }
+    }
+    if ([tilesetName isEqualToString:kTPTilesetGrass] || [tilesetName isEqualToString:kTPTilesetDirt]) {
+        // 1 in 3 chance for rain on dirt and grass tilesets.
+        if (arc4random_uniform(3) == 0) {
+            self.weather.conditions = WeatherRaining;
+        }
+    }
+
     // Reset layers.
     self.foreground.position = CGPointZero;
     for (SKSpriteNode *node in self.foreground.children) {
