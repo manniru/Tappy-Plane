@@ -14,6 +14,12 @@
 		570BE56A18DC945200A94DBF /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE56918DC945200A94DBF /* TPScrollingNode.m */; };
 		570BE57618DCBF3500A94DBF /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */; };
 		570BE58218E30A9500A94DBF /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 570BE58118E30A9500A94DBF /* TPConstants.m */; };
+		570C3B9D192CABCA003202CC /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 570C3B9C192CABCA003202CC /* SoundManager.m */; };
+		570C3C83192CC296003202CC /* Click.caf in Resources */ = {isa = PBXBuildFile; fileRef = 570C3C7E192CC296003202CC /* Click.caf */; };
+		570C3C84192CC296003202CC /* Collect.caf in Resources */ = {isa = PBXBuildFile; fileRef = 570C3C7F192CC296003202CC /* Collect.caf */; };
+		570C3C85192CC296003202CC /* Crunch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 570C3C80192CC296003202CC /* Crunch.caf */; };
+		570C3C86192CC296003202CC /* Engine.caf in Resources */ = {isa = PBXBuildFile; fileRef = 570C3C81192CC296003202CC /* Engine.caf */; };
+		570C3C87192CC296003202CC /* Rain.caf in Resources */ = {isa = PBXBuildFile; fileRef = 570C3C82192CC296003202CC /* Rain.caf */; };
 		57251AA4190FD7BB0008F468 /* TPCollectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 57251AA3190FD7BB0008F468 /* TPCollectable.m */; };
 		57251AEF1910FDF30008F468 /* TPBitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57251AEE1910FDF30008F468 /* TPBitmapFontLabel.m */; };
 		57251AF11913C91B0008F468 /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57251AF01913C91B0008F468 /* TilesetGraphics.plist */; };
@@ -67,6 +73,13 @@
 		570BE57518DCBF3500A94DBF /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
 		570BE58018E30A9500A94DBF /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
 		570BE58118E30A9500A94DBF /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
+		570C3B9B192CABCA003202CC /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		570C3B9C192CABCA003202CC /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
+		570C3C7E192CC296003202CC /* Click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.caf; sourceTree = "<group>"; };
+		570C3C7F192CC296003202CC /* Collect.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Collect.caf; sourceTree = "<group>"; };
+		570C3C80192CC296003202CC /* Crunch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crunch.caf; sourceTree = "<group>"; };
+		570C3C81192CC296003202CC /* Engine.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Engine.caf; sourceTree = "<group>"; };
+		570C3C82192CC296003202CC /* Rain.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.caf; sourceTree = "<group>"; };
 		57251AA2190FD7BB0008F468 /* TPCollectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCollectable.h; sourceTree = "<group>"; };
 		57251AA3190FD7BB0008F468 /* TPCollectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPCollectable.m; sourceTree = "<group>"; };
 		57251AED1910FDF30008F468 /* TPBitmapFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBitmapFontLabel.h; sourceTree = "<group>"; };
@@ -135,6 +148,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570C3C7D192CC296003202CC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				570C3C7E192CC296003202CC /* Click.caf */,
+				570C3C7F192CC296003202CC /* Collect.caf */,
+				570C3C80192CC296003202CC /* Crunch.caf */,
+				570C3C81192CC296003202CC /* Engine.caf */,
+				570C3C82192CC296003202CC /* Rain.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		5734432618DB36AE0007361B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +203,7 @@
 		576D4CC418DAFD1400A53A6E /* Tappy Plane */ = {
 			isa = PBXGroup;
 			children = (
+				570C3C7D192CC296003202CC /* Sounds */,
 				57E092FC18DC38D000AF0FDB /* Particle Effects */,
 				5734432618DB36AE0007361B /* Resources */,
 				576D4DBF18DB199100A53A6E /* Graphics.atlas */,
@@ -212,6 +238,8 @@
 				5726FEDC191BCD8D00DCFF62 /* TPGameOverMenu.m */,
 				5706E5EB1924C932006784C4 /* TPGetReadyMenu.h */,
 				5706E5EC1924C932006784C4 /* TPGetReadyMenu.m */,
+				570C3B9B192CABCA003202CC /* SoundManager.h */,
+				570C3B9C192CABCA003202CC /* SoundManager.m */,
 				576D4CDB18DAFD1400A53A6E /* Images.xcassets */,
 				576D4CC518DAFD1400A53A6E /* Supporting Files */,
 			);
@@ -339,11 +367,16 @@
 				5734432518DB36300007361B /* PlaneAnimations.plist in Resources */,
 				5706E5FC19263A71006784C4 /* RainEffect.sks in Resources */,
 				57251AF11913C91B0008F468 /* TilesetGraphics.plist in Resources */,
+				570C3C87192CC296003202CC /* Rain.caf in Resources */,
 				57E0930018DC38EA00AF0FDB /* spark.png in Resources */,
 				5706E5F81926347A006784C4 /* SnowEffect.sks in Resources */,
 				576D4CDC18DAFD1400A53A6E /* Images.xcassets in Resources */,
 				576D4DC018DB199100A53A6E /* Graphics.atlas in Resources */,
+				570C3C86192CC296003202CC /* Engine.caf in Resources */,
 				579AC24A18DC3A5800CBEB57 /* PlanePuffTrail.sks in Resources */,
+				570C3C85192CC296003202CC /* Crunch.caf in Resources */,
+				570C3C84192CC296003202CC /* Collect.caf in Resources */,
+				570C3C83192CC296003202CC /* Click.caf in Resources */,
 				576D4CD218DAFD1400A53A6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +404,7 @@
 				576D4CCB18DAFD1400A53A6E /* main.m in Sources */,
 				5726FEDD191BCD8D00DCFF62 /* TPGameOverMenu.m in Sources */,
 				5734432018DB27E80007361B /* TPPlane.m in Sources */,
+				570C3B9D192CABCA003202CC /* SoundManager.m in Sources */,
 				5706E5ED1924C932006784C4 /* TPGetReadyMenu.m in Sources */,
 				57251AA4190FD7BB0008F468 /* TPCollectable.m in Sources */,
 				57251AF71913D36E0008F468 /* TPTilesetTextureProvider.m in Sources */,
