@@ -9,6 +9,7 @@
 #import "TPPlane.h"
 #import "TPConstants.h"
 #import "TPCollectable.h"
+#import "SoundManager.h"
 
 @interface TPPlane()
 @property (nonatomic) NSMutableArray *planeAnimations; // Holds animation actions.
@@ -134,6 +135,7 @@ static const CGFloat kTPMaxAltitude = 300.0;
             // Hit the ground.
             self.crashed = YES;
             [self runAction:self.crashTintAction];
+            [[SoundManager sharedManager] playSound:@"Crunch.caf"];
         }
         if (body.categoryBitMask == kTPCategoryCollectable) {
             if ([body.node respondsToSelector:@selector(collect)]) {
