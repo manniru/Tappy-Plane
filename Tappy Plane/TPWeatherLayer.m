@@ -7,11 +7,13 @@
 //
 
 #import "TPWeatherLayer.h"
+#import "SoundManager.h"
 
 @interface TPWeatherLayer()
 
 @property (nonatomic) SKEmitterNode *rainEmitter;
 @property (nonatomic) SKEmitterNode *snowEmitter;
+@property (nonatomic) Sound *rainSound;
 
 @end
 
@@ -29,6 +31,10 @@
         _rainEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:rainEffectPath];
         _rainEmitter.position = CGPointMake(size.width * 0.5 + 32, size.height + 5);
         
+        // Setup rain sound.
+        _rainSound = [Sound soundNamed:@"Rain.caf"];
+        _rainSound.looping = YES;
+        
         // Load snow effect.
         NSString *snowEffectPath = [[NSBundle mainBundle] pathForResource:@"SnowEffect" ofType:@"sks"];
         _snowEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:snowEffectPath];
@@ -45,9 +51,16 @@
         // Remove existing weather effect.
         [self removeAllChildren];
         
+        // Stop any existing sounds from playing.
+        if (self.rainSound.playing) {
+            [self.rainSound fadeOut:1.0];
+        }
+        
         // Add weather conditions.
         switch (conditions) {
             case WeatherRaining:
+                [self.rainSound play];
+                [self.rainSound fadeIn:1.0];
                 [self addChild:self.rainEmitter];
                 [self.rainEmitter advanceSimulationTime:5];
                 break;
