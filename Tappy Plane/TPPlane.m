@@ -16,6 +16,7 @@
 @property (nonatomic) SKEmitterNode *puffTrailEmitter;
 @property (nonatomic) CGFloat puffTrailBirthRate;
 @property (nonatomic) SKAction *crashTintAction;
+@property (nonatomic) Sound *engineSound;
 
 @end
 
@@ -72,6 +73,10 @@ static const CGFloat kTPMaxAltitude = 300.0;
         SKAction *removeTint = [SKAction colorizeWithColorBlendFactor:0.0 duration:0.2];
         _crashTintAction = [SKAction sequence:@[tint, removeTint]];
         
+        // Setup engine sound.
+        _engineSound = [Sound soundNamed:@"Engine.caf"];
+        _engineSound.looping = YES;
+        
         [self setRandomColour];
     }
     return self;
@@ -92,11 +97,14 @@ static const CGFloat kTPMaxAltitude = 300.0;
 {
     _engineRunning = engineRunning && !self.crashed;
     if (engineRunning) {
+        [self.engineSound play];
+        [self.engineSound fadeIn:1.0];
         self.puffTrailEmitter.targetNode = self.parent;
         [self actionForKey:kTPKeyPlaneAnimation].speed = 1;
         self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     }
     else {
+        [self.engineSound fadeOut:0.5];
         [self actionForKey:kTPKeyPlaneAnimation].speed = 0;
         self.puffTrailEmitter.particleBirthRate = 0;
     }
@@ -172,6 +180,7 @@ static const CGFloat kTPMaxAltitude = 300.0;
     if(!self.crashed)
     {
         self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy, 400), -400) / 400;
+        self.engineSound.volume = 0.25 + fmaxf(fminf(self.physicsBody.velocity.dy, 300), 0) / 300 * 0.75;
     }
 }
 
