@@ -9,6 +9,8 @@
 #import "TPObstacleLayer.h"
 #import "TPConstants.h"
 #import "TPTilesetTextureProvider.h"
+#import "TPConstants.h"
+#import "TPChallengeProvider.h"
 
 @interface TPObstacleLayer()
 
@@ -21,10 +23,6 @@ static const CGFloat kTPVerticalGap = 90.0;
 static const CGFloat kTPSpaceBetweenObstacleSets = 180.0;
 static const int kTPCollectableVerticalRange = 200.0;
 static const CGFloat kTPCollectableClearance = 50.0;
-
-static NSString *const kTPKeyMountainUp = @"MountainUp";
-static NSString *const kTPKeyMountainDown = @"MountainDown";
-static NSString *const kTPKeyCollectableStar = @"CollectableStar";
 
 @implementation TPObstacleLayer
 
@@ -78,6 +76,7 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
 
 -(void)addObstacleSet
 {
+    /*
     // Get mountain nodes.
     SKSpriteNode *mountainUp = [self getUnusedObjectForKey:kTPKeyMountainUp];
     SKSpriteNode *mountainDown = [self getUnusedObjectForKey:kTPKeyMountainDown];
@@ -101,9 +100,22 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
     yPosition = fminf(yPosition, self.ceiling - kTPCollectableClearance);
     
     collectable.position = CGPointMake(self.marker + (kTPSpaceBetweenObstacleSets * 0.5), yPosition);
+    */
+    
+    
+    NSArray *challenge = [[TPChallengeProvider getProvider] getRandomChallenge];
+    
+    CGFloat furthestItem = 0;
+    for (TPChallengeItem *item in challenge) {
+        SKSpriteNode *object = [self getUnusedObjectForKey:item.obstacleKey];
+        object.position = CGPointMake(item.position.x + self.marker, item.position.y);
+        if (item.position.x > furthestItem) {
+            furthestItem = item.position.x;
+        }
+    }
     
     // Reposition marker.
-    self.marker += kTPSpaceBetweenObstacleSets;
+    self.marker += furthestItem + kTPSpaceBetweenObstacleSets;
     
 }
 

@@ -14,4 +14,8 @@ extern const uint32_t kTPCategoryPlane;
 extern const uint32_t kTPCategoryGround;
 extern const uint32_t kTPCategoryCollectable;
 
+extern NSString *const kTPKeyMountainUp;
+extern NSString *const kTPKeyMountainDown;
+extern NSString *const kTPKeyCollectableStar;
+
 @end
