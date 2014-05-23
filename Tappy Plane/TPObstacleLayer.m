@@ -44,11 +44,9 @@ static const CGFloat kTPCollectableClearance = 50.0;
     // Loop through child nodes and reposition for reuse and update texture.
     for (SKNode *node in self.children) {
         node.position = CGPointMake(-1000, 0);
-        if (node.name == kTPKeyMountainUp) {
-            ((SKSpriteNode*)node).texture = [[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"];
-        }
-        if (node.name == kTPKeyMountainDown) {
-            ((SKSpriteNode*)node).texture = [[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"];
+        if (node.name == kTPKeyMountainUp || node.name == kTPKeyMountainDown
+            || node.name == kTPKeyMountainUpAlternate || node.name == kTPKeyMountainDownAlternate) {
+            ((SKSpriteNode*)node).texture = [[TPTilesetTextureProvider getProvider] getTextureForKey:node.name];
         }
     }
     
@@ -145,8 +143,8 @@ static const CGFloat kTPCollectableClearance = 50.0;
     
     SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
     
-    if (key == kTPKeyMountainUp) {
-        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
+    if (key == kTPKeyMountainUp || key == kTPKeyMountainUpAlternate) {
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:key]];
         
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
@@ -162,8 +160,8 @@ static const CGFloat kTPCollectableClearance = 50.0;
         
         [self addChild:object];
     }
-    else if (key == kTPKeyMountainDown) {
-        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
+    else if (key == kTPKeyMountainDown || key == kTPKeyMountainDownAlternate) {
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:key]];
         
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;

@@ -63,7 +63,7 @@
     // Challenge 2
     challenge = [NSMutableArray array];
     [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyMountainUp andPosition:CGPointMake(90, 25)]];
-    [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyMountainDown andPosition:CGPointMake(0, 232)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyMountainDownAlternate andPosition:CGPointMake(0, 232)]];
     [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyCollectableStar andPosition:CGPointMake(100, 243)]];
     [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyCollectableStar andPosition:CGPointMake(152, 205)]];
     [self.challenges addObject:challenge];
@@ -71,7 +71,7 @@
     // Challenge 3
     challenge = [NSMutableArray array];
     [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyMountainUp andPosition:CGPointMake(0, 82)]];
-    [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyMountainUp andPosition:CGPointMake(122, 0)]];
+    [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyMountainUpAlternate andPosition:CGPointMake(122, 0)]];
     [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyMountainDown andPosition:CGPointMake(85, 320)]];
     [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyCollectableStar andPosition:CGPointMake(10, 213)]];
     [challenge addObject:[TPChallengeItem challengeItemWithKey:kTPKeyCollectableStar andPosition:CGPointMake(81, 116)]];
